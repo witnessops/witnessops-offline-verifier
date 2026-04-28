@@ -1,0 +1,27 @@
+{
+  "name": "witnessops-offline-verifier",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify:good": "node verify-bundle.mjs samples/bundle-good --json",
+    "verify:declared": "node verify-bundle.mjs samples/bundle-declared --json",
+    "verify:inferred": "node verify-bundle.mjs samples/bundle-inferred --json",
+    "verify:bad": "node verify-bundle.mjs samples/bundle-tampered --json",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "typescript": "latest"
+  },
+  "overrides": {
+    "postcss": "8.5.10"
+  }
+}

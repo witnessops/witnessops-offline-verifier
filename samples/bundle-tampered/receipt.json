@@ -1,0 +1,9 @@
+{
+  "schema": "witnessops.receipt.v1",
+  "receipt_id": "demo-bundle-tampered",
+  "subject": "offline-proof-bundle",
+  "claim": "TAMPERED after signing: receipt payload no longer matches receipt.jws",
+  "issued_at": "2026-04-28T05:00:11.680Z",
+  "evidence_hash_sha256": "2b0ee1533c8b39661a65f3475caba369fb784768b501a702837679ca70a021a1",
+  "expected_disposition": "not-proven"
+}
