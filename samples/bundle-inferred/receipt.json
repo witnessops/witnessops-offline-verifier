@@ -1,0 +1,9 @@
+{
+  "schema": "witnessops.receipt.v1",
+  "receipt_id": "demo-bundle-inferred",
+  "subject": "offline-proof-bundle",
+  "claim": "Example inferred bundle for /verify",
+  "issued_at": "2026-04-28T05:00:11.680Z",
+  "evidence_hash_sha256": "78c040ae06713e646232a5b2616ecb977d62d74a3a5463c641ca1d7b076c8ff8",
+  "expected_disposition": "inferred"
+}

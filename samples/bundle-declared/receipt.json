@@ -1,0 +1,9 @@
+{
+  "schema": "witnessops.receipt.v1",
+  "receipt_id": "demo-bundle-declared",
+  "subject": "offline-proof-bundle",
+  "claim": "Example declared bundle for /verify",
+  "issued_at": "2026-04-28T05:00:11.680Z",
+  "evidence_hash_sha256": "7b7941cc75e6a6618d3539b404355ab831146c4ffdcee03b37829c9b69bf9195",
+  "expected_disposition": "declared"
+}
