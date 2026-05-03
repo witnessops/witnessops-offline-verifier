@@ -1,0 +1,25 @@
+{
+  "proof_run_id": "PURPLE-DETECTION-FIXTURE-SPEC-V1",
+  "parent_candidate": "PRC-PURPLE-DETECTION",
+  "authority_gate_id": "PURPLE-DETECTION-GATE-001",
+  "classification": "INTERNAL_ONLY",
+  "execution_scope": "synthetic_fixture_only",
+  "closure_state": "closed_verified",
+  "evidence_manifest_path": "EVIDENCE_MANIFEST.json",
+  "verification_path": "VERIFICATION.json",
+  "artifact_hashes": [
+    {
+      "path": "SCENARIO_DECLARATION.json",
+      "sha256": "82b99b9fa2fcb74692f44a0ddb5cfba85b673b506d3c46ab728ac4ee3f53811d"
+    }
+  ],
+  "stop_condition_triggered": false,
+  "limitations": [
+    "synthetic fixture only",
+    "no adversary emulation executed",
+    "no BAS tooling executed",
+    "no live telemetry used",
+    "no production detection claim",
+    "no customer environment tested"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "proof_run_id": "PURPLE-DETECTION-FIXTURE-SPEC-V1",
+  "classification": "INTERNAL_ONLY",
+  "verifier": {
+    "name": "purple-detection-fixture-structure-checker",
+    "version": "0.1.0",
+    "mode": "structure_only"
+  },
+  "result": "passed",
+  "checks": [
+    {
+      "id": "scenario_synthetic",
+      "result": "passed",
+      "detail": "Scenario is synthetic and contains no attack commands or live target details."
+    },
+    {
+      "id": "no_production_detection_claim",
+      "result": "passed",
+      "detail": "Expectation and receipt avoid production detection claims."
+    }
+  ],
+  "limitations": [
+    "structure-only verification",
+    "synthetic fixture only",
+    "no adversary emulation executed",
+    "no live telemetry used"
+  ]
+}

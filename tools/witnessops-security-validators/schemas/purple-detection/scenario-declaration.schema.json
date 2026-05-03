@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/purple-detection/scenario-declaration.schema.json",
+  "title": "Purple Detection Scenario Declaration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario_id",
+    "classification",
+    "target_boundary",
+    "scenario_type",
+    "contains_attack_commands",
+    "contains_live_target_details",
+    "contains_customer_data",
+    "external_network_required"
+  ],
+  "properties": {
+    "scenario_id": { "const": "purple_detection_fixture_scenario_v1" },
+    "classification": { "const": "INTERNAL_ONLY" },
+    "target_boundary": { "const": "synthetic_fixture_only" },
+    "scenario_type": { "const": "synthetic_detection_validation" },
+    "contains_attack_commands": { "const": false },
+    "contains_live_target_details": { "const": false },
+    "contains_customer_data": { "const": false },
+    "external_network_required": { "const": false }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "fixture_id": "api_authz_fixture_v1",
+  "classification": "INTERNAL_ONLY",
+  "target_boundary": "live_api_endpoint",
+  "actors": [
+    {
+      "id": "actor_a",
+      "label": "Synthetic owner actor",
+      "synthetic": true
+    }
+  ],
+  "objects": [
+    {
+      "id": "object_a",
+      "owner_actor_id": "actor_a",
+      "synthetic": true
+    }
+  ]
+}

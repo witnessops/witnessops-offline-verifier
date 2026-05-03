@@ -1,0 +1,9 @@
+{
+  "source_declaration_id": "sbom_fixture_source_v1",
+  "classification": "INTERNAL_ONLY",
+  "target_boundary": "synthetic_local_fixture_only",
+  "source_type": "synthetic_fixture",
+  "contains_customer_data": false,
+  "contains_secrets": false,
+  "external_network_required": false
+}

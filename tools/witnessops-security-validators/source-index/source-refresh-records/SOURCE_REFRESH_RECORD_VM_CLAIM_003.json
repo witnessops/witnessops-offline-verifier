@@ -1,0 +1,20 @@
+{
+  "record_id": "SOURCE_REFRESH_RECORD_VM_CLAIM_003",
+  "classification": "INTERNAL_ONLY",
+  "publication_status": "do_not_publish",
+  "execution_status": "not_authorized",
+  "record_status": "reviewed_no_claim_upgrade",
+  "claim_id": "VM-CLAIM-003",
+  "exact_claim_text": "94% of cyberattacks leverage phishing tactics; 2025 saw a record number.",
+  "source_family": "market_statistic",
+  "source_url_or_citation": "Claims ledger source pointer: VAULTMESH_RESEARCH_CLAIMS_LEDGER_NORMALIZED_V1 (row VM-CLAIM-003); candidate sources APWG / Verizon DBIR 2025 require split and independent checks.",
+  "source_artifact_location": "not_retrieved",
+  "retrieval_date": "2026-05-03",
+  "custody_status": "source_unavailable",
+  "evidence_mechanism": "source_url_and_retrieval_note",
+  "reviewer": "codex_batch_001",
+  "decision": "source_inadequate",
+  "remaining_limits": ["Compound claim requires split.", "Sources not retrieved.", "Statistic not verified.", "Do not publish as fact."],
+  "claim_upgrade_authorized": false,
+  "public_claim_authorized": false
+}

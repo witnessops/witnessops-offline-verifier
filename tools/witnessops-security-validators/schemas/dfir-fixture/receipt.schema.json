@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/dfir-fixture/receipt.schema.json",
+  "title": "DFIR Fixture Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proof_run_id",
+    "parent_candidate",
+    "authority_gate_id",
+    "classification",
+    "execution_scope",
+    "closure_state",
+    "evidence_manifest_path",
+    "hashes_path",
+    "verification_path",
+    "artifact_hashes",
+    "stop_condition_triggered",
+    "limitations"
+  ],
+  "properties": {
+    "proof_run_id": { "const": "DFIR-FIXTURE-CUSTODY-DRY-RUN-V1" },
+    "parent_candidate": { "const": "PRC-DFIR-CUSTODY" },
+    "authority_gate_id": { "const": "DFIR-FIXTURE-CUSTODY-GATE-001" },
+    "classification": { "const": "INTERNAL_ONLY" },
+    "execution_scope": { "const": "harmless_fixture_only" },
+    "closure_state": {
+      "enum": [
+        "drafted",
+        "ready_for_fixture_run",
+        "blocked_no_authority",
+        "blocked_no_evidence",
+        "blocked_hash_mismatch",
+        "closed_verified"
+      ]
+    },
+    "evidence_manifest_path": { "const": "EVIDENCE_MANIFEST.json" },
+    "hashes_path": { "const": "HASHES.sha256" },
+    "verification_path": { "const": "VERIFICATION.json" },
+    "artifact_hashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "stop_condition_triggered": { "type": "boolean" },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "contains": { "const": "fixture-only dry run" }
+    }
+  }
+}

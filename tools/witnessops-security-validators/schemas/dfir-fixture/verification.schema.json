@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/dfir-fixture/verification.schema.json",
+  "title": "DFIR Fixture Verification Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proof_run_id",
+    "classification",
+    "verifier",
+    "result",
+    "checks",
+    "limitations"
+  ],
+  "properties": {
+    "proof_run_id": { "const": "DFIR-FIXTURE-CUSTODY-DRY-RUN-V1" },
+    "classification": { "const": "INTERNAL_ONLY" },
+    "verifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "mode"],
+      "properties": {
+        "name": { "const": "dfir-fixture-structure-checker" },
+        "version": { "type": "string", "minLength": 1 },
+        "mode": { "const": "structure_only" }
+      }
+    },
+    "result": { "enum": ["passed", "failed"] },
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "result", "detail"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "result": { "enum": ["passed", "failed", "skipped"] },
+          "detail": { "type": "string" }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "contains": { "const": "structure-only verification" }
+    }
+  }
+}

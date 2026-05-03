@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/api-authz/authorization-matrix.schema.json",
+  "title": "API Authorization Matrix",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["matrix_id", "decisions"],
+  "properties": {
+    "matrix_id": { "const": "api_authz_matrix_v1" },
+    "decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["actor_id", "object_id", "action", "expected_decision"],
+        "properties": {
+          "actor_id": { "type": "string", "pattern": "^actor_[a-z0-9_]+$" },
+          "object_id": { "type": "string", "pattern": "^object_[a-z0-9_]+$" },
+          "action": { "enum": ["read", "write", "delete"] },
+          "expected_decision": { "enum": ["allow", "deny"] }
+        }
+      }
+    }
+  }
+}

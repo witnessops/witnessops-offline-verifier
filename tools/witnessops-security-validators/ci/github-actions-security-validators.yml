@@ -1,0 +1,42 @@
+name: witnessops-security-validators
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  structure-only-security-validators:
+    name: Structure-only WitnessOps security validators
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: witnessops-security-validators
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate DFIR fixture examples
+        run: python3 scripts/validate-dfir-fixtures.py
+
+      - name: Validate API authorization fixture examples
+        run: python3 scripts/validate-api-authz-fixtures.py
+
+      - name: Validate SBOM supply-chain fixture examples
+        run: python3 scripts/validate-sbom-supply-chain-fixtures.py
+
+      - name: Validate purple detection fixture examples
+        run: python3 scripts/validate-purple-detection-fixtures.py
+
+      - name: Validate source refresh record examples
+        run: python3 scripts/validate-source-refresh-records.py

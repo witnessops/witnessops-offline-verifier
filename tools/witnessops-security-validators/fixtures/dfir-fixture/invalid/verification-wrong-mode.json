@@ -1,0 +1,20 @@
+{
+  "proof_run_id": "DFIR-FIXTURE-CUSTODY-DRY-RUN-V1",
+  "classification": "INTERNAL_ONLY",
+  "verifier": {
+    "name": "dfir-fixture-structure-checker",
+    "version": "0.1.0",
+    "mode": "runtime_acquisition"
+  },
+  "result": "passed",
+  "checks": [
+    {
+      "id": "manifest_json_parseable",
+      "result": "passed",
+      "detail": "This fixture should fail because verifier mode is not structure_only."
+    }
+  ],
+  "limitations": [
+    "structure-only verification"
+  ]
+}

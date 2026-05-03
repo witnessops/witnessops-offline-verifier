@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/sbom-supply-chain/evidence-manifest.schema.json",
+  "title": "SBOM Supply Chain Evidence Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proof_run_id",
+    "parent_candidate",
+    "classification",
+    "target_boundary",
+    "required_artifacts",
+    "artifact_hashes",
+    "stop_conditions_checked"
+  ],
+  "properties": {
+    "proof_run_id": { "const": "SBOM-SUPPLY-CHAIN-FIXTURE-SPEC-V1" },
+    "parent_candidate": { "const": "PRC-SUPPLY-CHAIN" },
+    "classification": { "const": "INTERNAL_ONLY" },
+    "target_boundary": { "const": "synthetic_local_fixture_only" },
+    "required_artifacts": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "contains": { "const": "ARTIFACTS/SOURCE_DECLARATION.json" }
+    },
+    "artifact_hashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "stop_conditions_checked": { "const": true }
+  }
+}

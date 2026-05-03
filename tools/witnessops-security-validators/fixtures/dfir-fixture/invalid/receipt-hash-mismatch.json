@@ -1,0 +1,21 @@
+{
+  "proof_run_id": "DFIR-FIXTURE-CUSTODY-DRY-RUN-V1",
+  "parent_candidate": "PRC-DFIR-CUSTODY",
+  "authority_gate_id": "DFIR-FIXTURE-CUSTODY-GATE-001",
+  "classification": "INTERNAL_ONLY",
+  "execution_scope": "harmless_fixture_only",
+  "closure_state": "closed_verified",
+  "evidence_manifest_path": "EVIDENCE_MANIFEST.json",
+  "hashes_path": "HASHES.sha256",
+  "verification_path": "VERIFICATION.json",
+  "artifact_hashes": [
+    {
+      "path": "receipt-hash-mismatch.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "stop_condition_triggered": false,
+  "limitations": [
+    "fixture-only dry run"
+  ]
+}

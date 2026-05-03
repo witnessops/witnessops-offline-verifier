@@ -1,0 +1,10 @@
+{
+  "scenario_id": "purple_detection_fixture_scenario_v1",
+  "classification": "INTERNAL_ONLY",
+  "target_boundary": "synthetic_fixture_only",
+  "scenario_type": "synthetic_detection_validation",
+  "contains_attack_commands": true,
+  "contains_live_target_details": false,
+  "contains_customer_data": false,
+  "external_network_required": false
+}

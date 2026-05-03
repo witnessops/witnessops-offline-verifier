@@ -1,0 +1,19 @@
+{
+  "proof_run_id": "DFIR-FIXTURE-CUSTODY-DRY-RUN-V1",
+  "authority_gate_id": "DFIR-FIXTURE-CUSTODY-GATE-001",
+  "classification": "INTERNAL_ONLY",
+  "fixture_boundary": "live_endpoint_capture",
+  "source_object": {
+    "name": "sample-evidence.txt",
+    "type": "harmless_text_file",
+    "contains_secrets": false,
+    "contains_personal_data": false,
+    "contains_customer_data": false,
+    "contains_malware": false
+  },
+  "required_artifacts": [
+    "ARTIFACTS/sample-evidence.txt"
+  ],
+  "artifact_hashes": [],
+  "stop_conditions_checked": true
+}

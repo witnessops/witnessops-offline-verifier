@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/sbom-supply-chain/source-declaration.schema.json",
+  "title": "SBOM Supply Chain Source Declaration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_declaration_id",
+    "classification",
+    "target_boundary",
+    "source_type",
+    "contains_customer_data",
+    "contains_secrets",
+    "external_network_required"
+  ],
+  "properties": {
+    "source_declaration_id": { "const": "sbom_fixture_source_v1" },
+    "classification": { "const": "INTERNAL_ONLY" },
+    "target_boundary": { "const": "synthetic_local_fixture_only" },
+    "source_type": { "const": "synthetic_fixture" },
+    "contains_customer_data": { "const": false },
+    "contains_secrets": { "const": false },
+    "external_network_required": { "const": false }
+  }
+}
