@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/purple-detection/detection-expectation.schema.json",
+  "title": "Purple Detection Expectation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "expectation_id",
+    "scenario_id",
+    "expected_result",
+    "control_claim",
+    "production_detection_claim"
+  ],
+  "properties": {
+    "expectation_id": { "const": "purple_detection_fixture_expectation_v1" },
+    "scenario_id": { "const": "purple_detection_fixture_scenario_v1" },
+    "expected_result": { "enum": ["detect", "not_detect"] },
+    "control_claim": { "const": "fixture_only" },
+    "production_detection_claim": { "const": false }
+  }
+}

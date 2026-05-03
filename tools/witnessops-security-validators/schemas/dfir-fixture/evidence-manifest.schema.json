@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/dfir-fixture/evidence-manifest.schema.json",
+  "title": "DFIR Fixture Evidence Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proof_run_id",
+    "authority_gate_id",
+    "classification",
+    "fixture_boundary",
+    "source_object",
+    "required_artifacts",
+    "artifact_hashes",
+    "stop_conditions_checked"
+  ],
+  "properties": {
+    "proof_run_id": { "const": "DFIR-FIXTURE-CUSTODY-DRY-RUN-V1" },
+    "authority_gate_id": { "const": "DFIR-FIXTURE-CUSTODY-GATE-001" },
+    "classification": { "const": "INTERNAL_ONLY" },
+    "fixture_boundary": { "const": "harmless_internal_fixture_file_only" },
+    "source_object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "contains_secrets",
+        "contains_personal_data",
+        "contains_customer_data",
+        "contains_malware"
+      ],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "type": { "const": "harmless_text_file" },
+        "contains_secrets": { "const": false },
+        "contains_personal_data": { "const": false },
+        "contains_customer_data": { "const": false },
+        "contains_malware": { "const": false }
+      }
+    },
+    "required_artifacts": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "contains": { "const": "ARTIFACTS/sample-evidence.txt" }
+    },
+    "artifact_hashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "stop_conditions_checked": { "const": true }
+  }
+}

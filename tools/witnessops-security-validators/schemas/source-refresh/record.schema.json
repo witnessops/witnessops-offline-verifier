@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/source-refresh/record.schema.json",
+  "title": "Source Refresh Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "classification",
+    "publication_status",
+    "execution_status",
+    "record_status",
+    "claim_id",
+    "exact_claim_text",
+    "source_family",
+    "source_url_or_citation",
+    "source_artifact_location",
+    "retrieval_date",
+    "custody_status",
+    "evidence_mechanism",
+    "reviewer",
+    "decision",
+    "remaining_limits"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "pattern": "^SOURCE_REFRESH_RECORD_[A-Z0-9_\\-]+$"
+    },
+    "classification": {
+      "const": "INTERNAL_ONLY"
+    },
+    "publication_status": {
+      "const": "do_not_publish"
+    },
+    "execution_status": {
+      "const": "not_authorized"
+    },
+    "record_status": {
+      "enum": [
+        "stub_only",
+        "source_retrieved_pending_review",
+        "reviewed_no_claim_upgrade",
+        "reviewed_claim_update_proposed",
+        "retired"
+      ]
+    },
+    "claim_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exact_claim_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_family": {
+      "enum": [
+        "market_statistic",
+        "regulatory_framework",
+        "vendor_tool_capability",
+        "api_security_reference",
+        "sbom_supply_chain_reference",
+        "purple_detection_reference",
+        "dfir_custody_reference",
+        "other"
+      ]
+    },
+    "source_url_or_citation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_artifact_location": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retrieval_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "custody_status": {
+      "enum": [
+        "not_retrieved",
+        "retrieved_not_preserved",
+        "preserved_local",
+        "preserved_repo_reference",
+        "preserved_external_custody",
+        "source_unavailable"
+      ]
+    },
+    "evidence_mechanism": {
+      "enum": [
+        "none_stub_only",
+        "source_snapshot",
+        "source_url_and_retrieval_note",
+        "hash_manifest",
+        "archived_copy",
+        "official_document_reference",
+        "other_named_mechanism"
+      ]
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "enum": [
+        "stub_only_no_decision",
+        "confirmed_source_backed",
+        "corrected_source_backed",
+        "contradicted_do_not_use",
+        "source_not_found",
+        "source_inadequate",
+        "stale_requires_newer_source",
+        "retired"
+      ]
+    },
+    "remaining_limits": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "claim_upgrade_authorized": {
+      "type": "boolean",
+      "const": false
+    },
+    "public_claim_authorized": {
+      "type": "boolean",
+      "const": false
+    }
+  }
+}

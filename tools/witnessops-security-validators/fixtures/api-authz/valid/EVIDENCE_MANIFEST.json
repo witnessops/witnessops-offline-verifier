@@ -1,0 +1,21 @@
+{
+  "proof_run_id": "API-AUTHZ-FIXTURE-SPEC-V1",
+  "parent_candidate": "PRC-API-AUTHZ",
+  "classification": "INTERNAL_ONLY",
+  "target_boundary": "synthetic_local_fixture_only",
+  "required_artifacts": [
+    "FIXTURE.json",
+    "AUTHORIZATION_MATRIX.json",
+    "OBSERVED_DECISIONS.json",
+    "VERIFICATION.json",
+    "RECEIPT.json",
+    "NOTES.md"
+  ],
+  "artifact_hashes": [
+    {
+      "path": "FIXTURE.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "stop_conditions_checked": true
+}

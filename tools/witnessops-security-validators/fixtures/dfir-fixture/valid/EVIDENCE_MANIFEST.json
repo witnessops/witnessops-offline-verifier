@@ -1,0 +1,29 @@
+{
+  "proof_run_id": "DFIR-FIXTURE-CUSTODY-DRY-RUN-V1",
+  "authority_gate_id": "DFIR-FIXTURE-CUSTODY-GATE-001",
+  "classification": "INTERNAL_ONLY",
+  "fixture_boundary": "harmless_internal_fixture_file_only",
+  "source_object": {
+    "name": "sample-evidence.txt",
+    "type": "harmless_text_file",
+    "contains_secrets": false,
+    "contains_personal_data": false,
+    "contains_customer_data": false,
+    "contains_malware": false
+  },
+  "required_artifacts": [
+    "ARTIFACTS/sample-evidence.txt",
+    "ARTIFACTS/NOTES.md",
+    "HASHES.sha256",
+    "ACTIONS.log",
+    "VERIFICATION.json",
+    "RECEIPT.json"
+  ],
+  "artifact_hashes": [
+    {
+      "path": "ARTIFACTS/sample-evidence.txt",
+      "sha256": "7a9d5b9d2c2d7c7fd985fbe4e8f9a451e6b3d6a6f4a2a93f2f3f4f5f6f7f8f90"
+    }
+  ],
+  "stop_conditions_checked": true
+}

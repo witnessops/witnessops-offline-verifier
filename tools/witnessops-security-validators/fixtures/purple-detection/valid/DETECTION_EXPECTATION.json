@@ -1,0 +1,7 @@
+{
+  "expectation_id": "purple_detection_fixture_expectation_v1",
+  "scenario_id": "purple_detection_fixture_scenario_v1",
+  "expected_result": "detect",
+  "control_claim": "fixture_only",
+  "production_detection_claim": false
+}

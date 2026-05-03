@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/api-authz/evidence-manifest.schema.json",
+  "title": "API Authorization Evidence Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proof_run_id",
+    "parent_candidate",
+    "classification",
+    "target_boundary",
+    "required_artifacts",
+    "artifact_hashes",
+    "stop_conditions_checked"
+  ],
+  "properties": {
+    "proof_run_id": { "const": "API-AUTHZ-FIXTURE-SPEC-V1" },
+    "parent_candidate": { "const": "PRC-API-AUTHZ" },
+    "classification": { "const": "INTERNAL_ONLY" },
+    "target_boundary": { "const": "synthetic_local_fixture_only" },
+    "required_artifacts": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "contains": { "const": "FIXTURE.json" }
+    },
+    "artifact_hashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "stop_conditions_checked": { "const": true }
+  }
+}

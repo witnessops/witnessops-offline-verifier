@@ -1,0 +1,24 @@
+{
+  "record_id": "SOURCE_REFRESH_RECORD_VM_CLAIM_001",
+  "classification": "INTERNAL_ONLY",
+  "publication_status": "do_not_publish",
+  "execution_status": "not_authorized",
+  "record_status": "reviewed_no_claim_upgrade",
+  "claim_id": "VM-CLAIM-001",
+  "exact_claim_text": "83% of organisations experienced cloud security incidents in 2024.",
+  "source_family": "market_statistic",
+  "source_url_or_citation": "Claims ledger source pointer: VAULTMESH_RESEARCH_CLAIMS_LEDGER_NORMALIZED_V1 (row VM-CLAIM-001); listed source title is “2024 Cloud Security Incidents Study” (exact publication not identified).",
+  "source_artifact_location": "not_retrieved",
+  "retrieval_date": "2026-05-03",
+  "custody_status": "source_unavailable",
+  "evidence_mechanism": "source_url_and_retrieval_note",
+  "reviewer": "codex_batch_001",
+  "decision": "source_not_found",
+  "remaining_limits": [
+    "Official source URL not yet identified.",
+    "Source not found in this lane.",
+    "Do not publish as fact."
+  ],
+  "claim_upgrade_authorized": false,
+  "public_claim_authorized": false
+}

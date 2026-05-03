@@ -1,0 +1,21 @@
+{
+  "proof_run_id": "SBOM-SUPPLY-CHAIN-FIXTURE-SPEC-V1",
+  "parent_candidate": "PRC-SUPPLY-CHAIN",
+  "classification": "INTERNAL_ONLY",
+  "target_boundary": "synthetic_local_fixture_only",
+  "required_artifacts": [
+    "ARTIFACTS/SOURCE_DECLARATION.json",
+    "ARTIFACTS/COMPONENT_INVENTORY.json",
+    "ARTIFACTS/NOTES.md",
+    "HASHES.sha256",
+    "VERIFICATION.json",
+    "RECEIPT.json"
+  ],
+  "artifact_hashes": [
+    {
+      "path": "ARTIFACTS/SOURCE_DECLARATION.json",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "stop_conditions_checked": true
+}

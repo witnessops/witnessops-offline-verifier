@@ -1,0 +1,20 @@
+{
+  "record_id": "SOURCE_REFRESH_RECORD_VM_CLAIM_016",
+  "classification": "INTERNAL_ONLY",
+  "publication_status": "do_not_publish",
+  "execution_status": "not_authorized",
+  "record_status": "reviewed_no_claim_upgrade",
+  "claim_id": "VM-CLAIM-016",
+  "exact_claim_text": "VaultMesh aligns with NIST guidelines for a continuous improvement security program.",
+  "source_family": "regulatory_framework",
+  "source_url_or_citation": "Claims ledger source pointer: VAULTMESH_RESEARCH_CLAIMS_LEDGER_NORMALIZED_V1 (row VM-CLAIM-016); exact NIST publication set not yet identified.",
+  "source_artifact_location": "not_retrieved",
+  "retrieval_date": "2026-05-03",
+  "custody_status": "source_unavailable",
+  "evidence_mechanism": "source_url_and_retrieval_note",
+  "reviewer": "codex_batch_001",
+  "decision": "source_inadequate",
+  "remaining_limits": ["Exact NIST publications not identified.", "Framework crosswalk not verified.", "Generic NIST alignment claim must not be published.", "Do not publish as fact."],
+  "claim_upgrade_authorized": false,
+  "public_claim_authorized": false
+}

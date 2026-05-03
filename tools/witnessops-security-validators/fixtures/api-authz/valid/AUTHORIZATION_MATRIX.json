@@ -1,0 +1,17 @@
+{
+  "matrix_id": "api_authz_matrix_v1",
+  "decisions": [
+    {
+      "actor_id": "actor_a",
+      "object_id": "object_a",
+      "action": "read",
+      "expected_decision": "allow"
+    },
+    {
+      "actor_id": "actor_b",
+      "object_id": "object_a",
+      "action": "read",
+      "expected_decision": "deny"
+    }
+  ]
+}

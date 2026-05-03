@@ -1,0 +1,22 @@
+{
+  "proof_run_id": "PURPLE-DETECTION-FIXTURE-SPEC-V1",
+  "parent_candidate": "PRC-PURPLE-DETECTION",
+  "classification": "INTERNAL_ONLY",
+  "target_boundary": "synthetic_fixture_only",
+  "required_artifacts": [
+    "ARTIFACTS/SCENARIO_DECLARATION.json",
+    "ARTIFACTS/DETECTION_EXPECTATION.json",
+    "ARTIFACTS/OBSERVED_RESULT.json",
+    "ARTIFACTS/NOTES.md",
+    "HASHES.sha256",
+    "VERIFICATION.json",
+    "RECEIPT.json"
+  ],
+  "artifact_hashes": [
+    {
+      "path": "ARTIFACTS/SCENARIO_DECLARATION.json",
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  ],
+  "stop_conditions_checked": true
+}

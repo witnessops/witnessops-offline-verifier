@@ -1,0 +1,7 @@
+{
+  "observed_result_id": "purple_detection_fixture_observed_v1",
+  "scenario_id": "purple_detection_fixture_scenario_v1",
+  "observed_result": "detect",
+  "source": "synthetic_fixture",
+  "production_telemetry_used": true
+}

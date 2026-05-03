@@ -1,0 +1,28 @@
+{
+  "proof_run_id": "SBOM-SUPPLY-CHAIN-FIXTURE-SPEC-V1",
+  "classification": "INTERNAL_ONLY",
+  "verifier": {
+    "name": "sbom-supply-chain-fixture-structure-checker",
+    "version": "0.1.0",
+    "mode": "structure_only"
+  },
+  "result": "passed",
+  "checks": [
+    {
+      "id": "source_declaration_synthetic",
+      "result": "passed",
+      "detail": "Source declaration is synthetic/local and requires no external network."
+    },
+    {
+      "id": "components_synthetic",
+      "result": "passed",
+      "detail": "All fixture components are synthetic."
+    }
+  ],
+  "limitations": [
+    "structure-only verification",
+    "synthetic fixture only",
+    "no live repository analyzed",
+    "no package registry queried"
+  ]
+}

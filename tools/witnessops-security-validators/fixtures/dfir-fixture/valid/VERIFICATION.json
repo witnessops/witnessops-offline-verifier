@@ -1,0 +1,32 @@
+{
+  "proof_run_id": "DFIR-FIXTURE-CUSTODY-DRY-RUN-V1",
+  "classification": "INTERNAL_ONLY",
+  "verifier": {
+    "name": "dfir-fixture-structure-checker",
+    "version": "0.1.0",
+    "mode": "structure_only"
+  },
+  "result": "passed",
+  "checks": [
+    {
+      "id": "manifest_json_parseable",
+      "result": "passed",
+      "detail": "Example manifest parses as JSON."
+    },
+    {
+      "id": "receipt_json_parseable",
+      "result": "passed",
+      "detail": "Example receipt parses as JSON."
+    },
+    {
+      "id": "limitations_include_fixture_only",
+      "result": "passed",
+      "detail": "Receipt limitations include fixture-only dry run."
+    }
+  ],
+  "limitations": [
+    "structure-only verification",
+    "example fixture only",
+    "no runtime evidence package generated"
+  ]
+}

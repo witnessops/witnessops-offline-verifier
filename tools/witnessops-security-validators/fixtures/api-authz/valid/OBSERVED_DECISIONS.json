@@ -1,0 +1,20 @@
+{
+  "observed_decisions": [
+    {
+      "request_id": "req_001",
+      "actor_id": "actor_a",
+      "object_id": "object_a",
+      "action": "read",
+      "expected_decision": "allow",
+      "observed_decision": "allow"
+    },
+    {
+      "request_id": "req_002",
+      "actor_id": "actor_b",
+      "object_id": "object_a",
+      "action": "read",
+      "expected_decision": "deny",
+      "observed_decision": "deny"
+    }
+  ]
+}

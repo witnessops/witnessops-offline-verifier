@@ -1,0 +1,58 @@
+name: WitnessOps Security Validators
+
+on:
+  pull_request:
+    paths:
+      - "tools/witnessops-security-validators/**"
+      - "docs/security-validators-adoption.md"
+      - ".github/workflows/security-validators.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "tools/witnessops-security-validators/**"
+      - "docs/security-validators-adoption.md"
+      - ".github/workflows/security-validators.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: witnessops-security-validators-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  structure-only-security-validators:
+    name: Structure-only security validators
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/witnessops-security-validators
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+
+      - name: Show Python runtime
+        run: python3 --version
+
+      - name: Validate DFIR fixture examples
+        run: python3 scripts/validate-dfir-fixtures.py
+
+      - name: Validate API authorization fixture examples
+        run: python3 scripts/validate-api-authz-fixtures.py
+
+      - name: Validate SBOM supply-chain fixture examples
+        run: python3 scripts/validate-sbom-supply-chain-fixtures.py
+
+      - name: Validate purple detection fixture examples
+        run: python3 scripts/validate-purple-detection-fixtures.py
+
+      - name: Validate source refresh record examples
+        run: python3 scripts/validate-source-refresh-records.py

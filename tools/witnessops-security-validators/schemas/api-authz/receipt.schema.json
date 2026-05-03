@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/api-authz/receipt.schema.json",
+  "title": "API Authorization Fixture Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proof_run_id",
+    "parent_candidate",
+    "authority_gate_id",
+    "classification",
+    "execution_scope",
+    "closure_state",
+    "evidence_manifest_path",
+    "verification_path",
+    "artifact_hashes",
+    "stop_condition_triggered",
+    "limitations"
+  ],
+  "properties": {
+    "proof_run_id": { "const": "API-AUTHZ-FIXTURE-SPEC-V1" },
+    "parent_candidate": { "const": "PRC-API-AUTHZ" },
+    "authority_gate_id": { "const": "API-AUTHZ-GATE-001" },
+    "classification": { "const": "INTERNAL_ONLY" },
+    "execution_scope": { "const": "synthetic_local_fixture_only" },
+    "closure_state": {
+      "enum": [
+        "drafted",
+        "ready_for_fixture_run",
+        "blocked_no_authority",
+        "blocked_bad_fixture",
+        "blocked_decision_mismatch",
+        "blocked_invalid_artifact",
+        "closed_verified"
+      ]
+    },
+    "evidence_manifest_path": { "const": "EVIDENCE_MANIFEST.json" },
+    "verification_path": { "const": "VERIFICATION.json" },
+    "artifact_hashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "stop_condition_triggered": { "type": "boolean" },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "contains": { "const": "no live API tested" }
+    }
+  }
+}

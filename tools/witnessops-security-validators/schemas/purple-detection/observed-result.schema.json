@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://witnessops.internal/schemas/purple-detection/observed-result.schema.json",
+  "title": "Purple Detection Observed Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observed_result_id",
+    "scenario_id",
+    "observed_result",
+    "source",
+    "production_telemetry_used"
+  ],
+  "properties": {
+    "observed_result_id": { "const": "purple_detection_fixture_observed_v1" },
+    "scenario_id": { "const": "purple_detection_fixture_scenario_v1" },
+    "observed_result": { "enum": ["detect", "not_detect"] },
+    "source": { "const": "synthetic_fixture" },
+    "production_telemetry_used": { "const": false }
+  }
+}

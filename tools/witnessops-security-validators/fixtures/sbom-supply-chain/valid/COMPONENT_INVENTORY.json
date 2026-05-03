@@ -1,0 +1,12 @@
+{
+  "inventory_id": "sbom_fixture_inventory_v1",
+  "format": "internal_fixture",
+  "components": [
+    {
+      "name": "synthetic-component-a",
+      "version": "0.0.1",
+      "type": "library",
+      "synthetic": true
+    }
+  ]
+}
