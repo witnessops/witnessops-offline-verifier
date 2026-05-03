@@ -1,4 +1,4 @@
-# Repository Findings Memo
+# Repository Findings Memo - PR Follow-up
 
 - **Generated:** 2026-05-03T17:35:00Z
 - **Scope:** Workspace sweep (`~/WitnessOps/repos`)
