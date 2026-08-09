@@ -7,6 +7,7 @@ import { verifyBundle } from '../verify-bundle.mjs';
 
 const repositoryRoot = fileURLToPath(new URL('../', import.meta.url));
 const trustDirs = [path.join(repositoryRoot, 'trust', 'roots')];
+const validationTime = new Date('2026-08-09T00:00:00Z');
 
 const cases = [
   ['bundle-good', 'verified'],
@@ -19,7 +20,7 @@ for (const [sample, expectedStatus] of cases) {
   test(`${sample} produces ${expectedStatus}`, async () => {
     const result = await verifyBundle(
       path.join(repositoryRoot, 'samples', sample),
-      { trustDirs }
+      { trustDirs, validationTime }
     );
 
     assert.equal(result.status, expectedStatus);
