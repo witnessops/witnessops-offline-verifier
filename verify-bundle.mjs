@@ -361,7 +361,12 @@ async function verifyBundle(bundleDir, opts = {}) {
 
     const timestamp = verifyTimestampToken(bundleDir, trustRoots, Buffer.from(jwsText, 'utf8'));
     checks.trusted_issuance_time = timestamp.trusted;
-    const chainValidationTime = timestamp.trusted ? new Date(timestamp.time) : new Date();
+    const chainValidationTime = timestamp.trusted
+      ? new Date(timestamp.time)
+      : (opts.validationTime ? new Date(opts.validationTime) : new Date());
+    if (Number.isNaN(chainValidationTime.getTime())) {
+      throw new Error('Invalid validationTime option');
+    }
 
     const signerChainCheck = validateCertChain(signerChain, trustRoots, chainValidationTime);
     checks.signer_chain = signerChainCheck.ok;
