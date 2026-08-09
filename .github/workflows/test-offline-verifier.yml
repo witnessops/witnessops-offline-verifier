@@ -1,0 +1,46 @@
+name: Offline verifier functional samples
+
+on:
+  pull_request:
+    paths:
+      - "verify-bundle.mjs"
+      - "samples/**"
+      - "trust/roots/**"
+      - "tests/**"
+      - "package.json"
+      - ".github/workflows/test-offline-verifier.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "verify-bundle.mjs"
+      - "samples/**"
+      - "trust/roots/**"
+      - "tests/**"
+      - "package.json"
+      - ".github/workflows/test-offline-verifier.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: offline-verifier-functional-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  functional-samples:
+    name: Functional sample dispositions
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+
+      - name: Run functional sample tests
+        run: npm test
