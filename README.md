@@ -23,7 +23,7 @@ It includes:
 - `verify-bundle.mjs` — a single-file, zero-runtime-dependency Node CLI.
 - `app/page.tsx` — a minimal Next.js dropzone UI.
 - `app/api/verify/route.ts` — a local `/api/verify` bridge that writes uploaded files to a temp directory and calls the CLI.
-- `samples/` — four demonstration bundles covering `verified`, `inferred`, `declared`, and `not-proven`.
+- `samples/` — four demonstration bundles covering `verified`, `inferred`, `declared`, and `not_proven`.
 - `trust/roots/` — local demo trust policy used by this prototype.
 
 ## Evidentiary boundary
